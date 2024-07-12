@@ -1,0 +1,167 @@
+<div id="footer-container">
+{{#if subscriptionFooter.active}}
+  {{> fashion/views/partials/suscription}}
+{{/if}}
+<footer>
+  <div class="fashion-nav-footer-contact">
+    <div class="fashion-nav-footer-contact__content header--custom-background">
+      <div class="nav-bounds nav-bounds--contact {{#if interestLinks}} fashion-nav-footer--with-links-pages {{/if}}">
+        <div class="fashion-nav-footer__brand-col header--custom-text">
+          {{#if logo}}
+          <a class="nav-fashion-header__logo" href="/" id="logo-wrapper">
+            <span class="nav-header__title-hidden">{{name}}</span>
+            <img class="nav-header__image" src="{{logo}}" alt="{{name}}" itemprop="logo" />
+          </a>
+          {{else}}
+          <h3 class="nav-footer-contact-title header--custom-text">
+            <a href="/">{{name}}</a>
+          </h3>
+          {{/if}}
+          {{#if showLogoCaption}}
+          <p class="fashion-nav-footer__logo-caption">{{{logoCaption}}}</p>
+          {{/if}}
+          {{#if showSocialMedia}}
+          <div class="fashion-nav-footer__social-media--responsive">
+            {{#each socialNetworks}}
+            <a href="{{url}}" rel="noreferrer noopener nofollow" target="_blank" class="header--custom-svg">
+              {{> (concat 'icons/social_networks/' (lookup . 'name'))}}
+            </a>
+            {{/each}}
+          </div>
+          {{/if}}
+        </div>
+
+        <div class="fashion-nav-footer__categories-col-container header--custom-border">
+          <div class="fashion-nav-footer__categories-title-container">
+            <h4 class="fashion-nav-footer__categories-title header--custom-text">{{dropdown_title_text}}</h4>
+            <div class="fashion-nav-footer__categories-title__icon-down">
+              {{> fashion/views/partials/icons/dropdown}}
+            </div>
+            <div class="fashion-nav-footer__categories-title__icon-up">
+              {{> fashion/views/partials/icons/up }}
+            </div>
+          </div>
+          <div class="fashion-nav-footer__categories-col header--custom-border">
+            {{#each menu}}
+              <span class="fashion-nav-footer__category">
+                <a href="{{url}}" data-id="{{id}}" class="header--custom-text" {{#if this.openNewTab}}target="_blank"{{/if}}>
+                  {{name}}
+                </a>
+              </span>
+            {{/each}}
+          </div>
+        </div>
+        {{#if interestLinks}}
+          <div class="fashion-nav-footer__links-pages-container header--custom-border">
+            <div class="fashion-nav-footer__links-pages dropdown">
+              <div class="fashion-nav-footer__link-pages__title-container dropdown-title">
+                <h4 class="fashion-nav-footer__link-pages__title header--custom-text">{{i18n.interestLinksLabel}}</h4>
+                <div class="fashion-nav-footer__link-pages__icon-down">
+                  {{> fashion/views/partials/icons/dropdown}}
+                </div>
+                <div class="fashion-nav-footer__link-pages__icon-up">
+                  {{> fashion/views/partials/icons/up }}
+                </div>
+              </div>
+              <div class="fashion-nav-footer__link-pages__links-container dropdown-content">
+                {{#each interestLinks}}
+                  <a class="fashion-nav-footer__link header--custom-text" href="{{url}}">
+                    {{name}}
+                  </a>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        {{/if}}
+        <div class="fashion-nav-footer__pages header--custom-border">
+          <span class="fashion-nav-footer__page">
+            <a href="{{linkToHowBuy.href}}" class="header--custom-text">{{linkToHowBuy.label}}</a>
+          </span>
+        </div>
+
+        <div class="fashion-nav-footer__contact-col">
+          {{#if showSocialMedia}}
+          <div class="fashion-nav-footer__social-media">
+            {{#each socialNetworks}}
+            <a href="{{url}}" rel="noreferrer noopener nofollow" target="_blank" class="header--custom-svg">
+              {{> (concat 'icons/social_networks/' (lookup . 'name'))}}
+            </a>
+            {{/each}}
+          </div>
+          {{/if}}
+          {{#if showContact}}
+          <ul class="fashion-nav-footer__contact header--custom-border">
+            {{#if showPhone}}
+            <li class="contact-phone-number">
+              <a class="header--custom-text" itemprop="telephone" href="tel:{{phone.formatted}}" rel="nofollow">Tel:
+                {{phone.formatted}}</a>
+            </li>
+            {{/if}}
+            {{#if showEmail}}
+            <li class="contact-mail">
+              <a class="header--custom-text" itemprop="email" href="mailto:{{email}}" rel="nofollow">{{email}}</a>
+            </li>
+            {{/if}}
+            {{#if showAddress}}
+            {{#with address}}
+            <li>
+              <span class="header--custom-text" itemprop="streetAddress">{{address}}</span>
+              <span class="header--custom-text" itemprop="addressLocality">{{city}}</span>
+              <span class="header--custom-text" itemprop="addressRegion">{{state}}</span>
+            </li>
+            {{/with}}
+            {{/if}}
+            <meta itemprop="contactType" content="customer service" />
+          </ul>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div role="contentinfo" class="fashion-nav-footer nav-footer header--custom-text header--custom-background">
+    <div class="nav-bounds nav-bounds--copyright header--custom-border">
+      <div class="nav-footer-primaryinfo">
+        <small class="nav-footer-copyright">
+          <div class="nav-footer-disclaimer">
+            <div>
+              <div class="nav-footer-about">
+                <a href="{{{linkToMShopsLandingPage}}}" target="_blank" class="header--custom-text">{{i18n.powered_by}}</a>
+                {{#if linkToLegalNotices}}
+                <a href="{{linkToLegalNotices.href}}" class="header--custom-text">{{linkToLegalNotices.label}}</a>
+                {{/if}}
+                {{#if linkToHowBuy}}
+                <a href="{{linkToHowBuy.href}}" class="header--custom-text">{{linkToHowBuy.label}}</a>
+                {{/if}}
+                {{#if linkToLGPD}}
+                <a href="{{linkToLGPD.href}}" class="header--custom-text">{{linkToLGPD.label}}</a>
+                {{/if}}
+                {{#if linkProtectedPurchase}}
+                <a href="{{linkProtectedPurchase.href}}" class="header--custom-text">{{linkProtectedPurchase.label}}</a>
+                {{/if}}
+                {{#if linkToCookieSettings}}
+                <a href="{{linkToCookieSettings.href}}" class="header--custom-text">{{linkToCookieSettings.label}}</a>
+                {{/if}}
+              </div>
+              {{#if showBusinessData}}
+                {{#with fiscalData}}
+                  <div class="nav-footer-fiscal-data">
+                    <p class="nav-footer-fiscal-data__name">{{legal_name}}</p>
+                    <p class="nav-footer-fiscal-data__id">{{legal_doc}}</p>
+                  </div>
+                {{/with}}
+              {{/if}}
+            </div>
+            {{#if showQrData}}
+            {{#with fiscalData}}
+            <a href={{qr_link}} target="_F960AFIPInfo">
+              <img class="nav-footer-afip-img" src={{qr_img}} alt="Data fiscal" />
+            </a>
+            {{/with}}
+            {{/if}}
+          </div>
+        </small>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
