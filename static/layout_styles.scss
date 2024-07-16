@@ -2232,7 +2232,7 @@ $gray: #6a6a6a;
 // HEADER
 div[id="header-wrapper"] {
   a.flash-component__link-wrapper {
-    .flash-component {
+    div.flash-component.header--custom-secondary-background {
       background: $dark !important;
       h3.flash-component__text {
         display: flex;
@@ -2246,8 +2246,13 @@ div[id="header-wrapper"] {
     }
   }
 }
+
+.header-wrapper--with-transparency header {
+  background-color: #fff !important;
+}
 header[class="nav-fashion-header"] {
   background-color: #fff !important;
+  background: #fff !important;
   -webkit-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.75);
@@ -2255,7 +2260,7 @@ header[class="nav-fashion-header"] {
     justify-content: space-between;
     .nav-fashion-header__title {
       width: 324px;
-      max-width: 324px!important;
+      max-width: 324px !important;
     }
     ul.nav-fashion-list {
       margin: 0;
@@ -2266,7 +2271,7 @@ header[class="nav-fashion-header"] {
         gap: 15px;
         svg {
           path {
-            fill: $orange!important;
+            fill: $orange !important;
           }
         }
         form {
@@ -2277,48 +2282,138 @@ header[class="nav-fashion-header"] {
         }
       }
     }
-    
   }
 }
 .products-carousel-title {
-  color: $orange!important;
+  color: $orange !important;
 }
 .section-category__title {
-  color: $orange!important;
+  color: $orange !important;
 }
-h2[class="products-gallery-title section-header__title--base"]  {
-  color: $orange!important;
+h2[class="products-gallery-title section-header__title--base"] {
+  color: $orange !important;
 }
 
 ul.carousel-with-tabs__tabs-list {
   li.tabs-list__item--active {
     div.tab-item-label {
-      border-color: $orange!important;
-      color: $orange!important;
+      border-color: $orange !important;
+      color: $orange !important;
     }
   }
 }
 button {
   svg {
     path {
-      fill: $orange!important;
+      fill: $orange !important;
     }
   }
 }
 .products-carousel-action {
   a.products-carousel-action__label {
-    color: $brown!important;
+    color: $brown !important;
   }
 }
 input {
-  outline: none!important;
+  outline: none !important;
+}
+
+.formas-pagamentos {
+  h4 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    color: #000;
+  }
+  > span {
+    display: block;
+    max-width: 150px;
+    margin: 25px 0;
+    svg {
+      width: 100%;
+    }
+  }
+  .payments-list {
+    max-width: 250px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+h4[class*="fashion-nav-footer__link-pages__title"] {
+  overflow: none !important;
+}
+h4.fashion-nav-footer__link-pages__title.header--custom-text {
+  overflow: none !important;
+}
+.fashion-nav-footer__security {
+  width: 100%;
+  margin-top: 10px;
+  padding-bottom: 30px;
+  h4 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    color: #000;
+    margin-bottom: 20px;
+  }
+  > div {
+    display: flex;
+    gap: 20px;
+    max-width: 250px;
+    img {
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+    a {
+      width: 30%;
+      height: 61px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100% !important;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.content-logos {
+  width: 100%;
+  padding: 20px 0;
+  .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      img {
+        max-width: 150px;
+      }
+    }
+  }
+}
+
+footer {
+  .fashion-nav-footer__categories-col {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .fashion-nav-footer-contact__content {
+    background: #a7a7a7 !important;
+  }
 }
 
 // MOBILE
 @media (max-width: 768px) {
   header[class="nav-fashion-header"] {
     .nav-header__hamburger {
-      background: $orange!important;
+      background: $orange !important;
     }
     .nav-fashion-header__bounds {
       ul.nav-fashion-list {
@@ -2332,6 +2427,175 @@ input {
         top: 50%;
         transform: translateY(-50%);
       }
+    }
+  }
+  .content-logos {
+    .logos {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+  .fashion-nav-footer__security, .formas-pagamentos {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.ui-ms-shipping-container {
+  .ui-ms-shipping-container__item {
+    .ui-item__shipping-free {
+      padding: 5px 10px;
+      background-color: $orange;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .ui-item__shipping-icon {
+        position: relative;
+        left: auto;
+        top: auto;
+        path {
+          fill: #fff !important;
+          color: #fff !important;
+        }
+      }
+      .ui-item__shipping-label {
+        display: block !important;
+        color: #fff !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+      }
+    }
+  }
+  
+}
+
+#section-info {
+  .info-slide__title {
+    color: $orange!important;
+  }
+}
+.banner-text {
+  .banner-text__link {
+    display: none;
+  }
+}
+.section-category-item__header {
+  background: $orange!important;
+  border-radius: 0!important;
+}
+
+// CATEGORIA
+.ui-search-main {
+  .shops__sidebar {
+    .ui-search-breadcrumb__title {
+      color: $orange !important;
+    }
+    .shops__filter-groups {
+      h3 {
+        color: $orange !important;
+      }
+    }
+  }
+}
+
+#search-form {
+  input#search-input {
+    background: #fff;
+  }
+}
+
+span[aria-roledescription="Preço"] {
+  color: $orange !important;
+}
+
+
+// PAGINA DE PRODuTOS
+form.ui-pdp-actions {
+  
+}
+button[class*="ui-pdp-action--primary"] {
+  background-color: $orange!important;
+  border: 0!important;
+  span.andes-button__content {
+    color: #FFF!important;
+  }
+}
+button[class*="andes-button--quiet"] {
+  background-color: $gray !important;
+  border: 0!important;
+  color:  $orange!important;
+  span.andes-button__content {
+    color: #FFF!important;
+  }
+}
+.andes-button--loud {
+  background-color: $orange!important;
+  border: 0!important;
+  span.andes-button__content {
+    color: #FFF!important;
+  }
+}
+.ui-compats__actions:has(button[type="submit"]) {
+  button[type="submit"] {
+    opacity: 1;
+    color: #FFF!important;
+    span {
+      opacity: 1;
+      color: #FFF!important;
+    }
+  }
+}
+
+.andes-breadcrumb__item {
+  .andes-breadcrumb__link {
+    color: $brown!important;
+    span {
+      color: $brown!important;
+    }
+  }
+}
+
+
+// PAGINA DE CONTATO
+.contact-form {
+  .contact-form__title {
+    text-align: center;
+    color: #000;
+  }
+  
+  .contact-form__input--email {
+    width: 100%;
+    label {
+      span {
+        font-size:17px;
+        color: #000;
+        margin: 0 0 10px 0;
+      } 
+    }
+  }
+
+  button[type="submit"] {
+    background-color: $orange!important;
+    span.andes-button__content {
+      color: #FFF!important;
+    } 
+  }
+}
+
+.contact-info__col-data {
+  .contact-info__title {
+    text-align: center;
+    color: #000;
+  }
+  label {
+    font-size:17px;
+    color: #000;
+    margin: 0 0 10px 0;
+  }
+
+  .contact-info__data {
+    a {
+      color: #000;
     }
   }
 }

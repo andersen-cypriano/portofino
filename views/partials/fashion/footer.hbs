@@ -34,12 +34,7 @@
         <div class="fashion-nav-footer__categories-col-container header--custom-border">
           <div class="fashion-nav-footer__categories-title-container">
             <h4 class="fashion-nav-footer__categories-title header--custom-text">{{dropdown_title_text}}</h4>
-            <div class="fashion-nav-footer__categories-title__icon-down">
-              {{> fashion/views/partials/icons/dropdown}}
-            </div>
-            <div class="fashion-nav-footer__categories-title__icon-up">
-              {{> fashion/views/partials/icons/up }}
-            </div>
+            
           </div>
           <div class="fashion-nav-footer__categories-col header--custom-border">
             {{#each menu}}
@@ -52,18 +47,14 @@
           </div>
         </div>
         {{#if interestLinks}}
+          
           <div class="fashion-nav-footer__links-pages-container header--custom-border">
-            <div class="fashion-nav-footer__links-pages dropdown">
-              <div class="fashion-nav-footer__link-pages__title-container dropdown-title">
+            <div class="fashion-nav-footer__links-pages">
+              <div class="fashion-nav-footer__link-pages__title-container">
                 <h4 class="fashion-nav-footer__link-pages__title header--custom-text">{{i18n.interestLinksLabel}}</h4>
-                <div class="fashion-nav-footer__link-pages__icon-down">
-                  {{> fashion/views/partials/icons/dropdown}}
-                </div>
-                <div class="fashion-nav-footer__link-pages__icon-up">
-                  {{> fashion/views/partials/icons/up }}
-                </div>
+                
               </div>
-              <div class="fashion-nav-footer__link-pages__links-container dropdown-content">
+              <div class="fashion-nav-footer__link-pages__links-container">
                 {{#each interestLinks}}
                   <a class="fashion-nav-footer__link header--custom-text" href="{{url}}">
                     {{name}}
@@ -73,6 +64,10 @@
             </div>
           </div>
         {{/if}}
+        <div class="fashion-nav-footer__links-payments-container header--custom-border">
+            {{> fashion/views/partials/logos/icons-payments }}
+            {{> fashion/views/partials/securitylogos/logos }}
+          </div>
         <div class="fashion-nav-footer__pages header--custom-border">
           <span class="fashion-nav-footer__page">
             <a href="{{linkToHowBuy.href}}" class="header--custom-text">{{linkToHowBuy.label}}</a>
@@ -163,5 +158,25 @@
       </div>
     </div>
   </div>
+  <div class="content-logos" style="width: 100%; overflow: hidden;">
+  <div class="logos">
+    <div class="logo">
+      <p>Tecnologia:</p>
+      <a href="https://www.mercadoshops.com.br/?utm_source=mercadoshops&utm_medium=referral&utm_campaign=hunting_always_on&utm_content=footer_seller">
+        <img loading="lazy"
+          src="https://http2.mlstatic.com/frontend-assets/ms-web-navigation/ui-navigation/6.1.4/mercadoshops/logo__mshops.png"
+          alt="MT Soluções">
+      </a>
+    </div>
+    <div class="logo">
+      <p>Desenvolvido por:</p>
+      <a href="https://mtsolucoes.com.br/?utm_source=portofino&utm_medium=portofino">
+        <img loading="lazy" src="https://mtsolucoes.com.br/wp-content/uploads/2022/07/logo-mtsolucoes-topo2.svg"
+          alt="MT Soluções">
+      </a>
+    </div>
+  </div>
+
+</div>
 </footer>
 </div>
