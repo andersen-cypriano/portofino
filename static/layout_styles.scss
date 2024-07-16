@@ -2324,6 +2324,7 @@ input {
     font-weight: 700;
     line-height: 22px;
     color: #000;
+    margin-top: 0;
   }
   > span {
     display: block;
@@ -2411,6 +2412,9 @@ footer {
 
 // MOBILE
 @media (max-width: 768px) {
+  .header-wrapper--fixed {
+    width: 100vw!important;
+  }
   header[class="nav-fashion-header"] {
     .nav-header__hamburger {
       background: $orange !important;
@@ -2435,7 +2439,8 @@ footer {
       gap: 0;
     }
   }
-  .fashion-nav-footer__security, .formas-pagamentos {
+  .fashion-nav-footer__security,
+  .formas-pagamentos {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -2466,12 +2471,11 @@ footer {
       }
     }
   }
-  
 }
 
 #section-info {
   .info-slide__title {
-    color: $orange!important;
+    color: $orange !important;
   }
 }
 .banner-text {
@@ -2480,8 +2484,8 @@ footer {
   }
 }
 .section-category-item__header {
-  background: $orange!important;
-  border-radius: 0!important;
+  background: $orange !important;
+  border-radius: 0 !important;
 }
 
 // CATEGORIA
@@ -2508,79 +2512,106 @@ span[aria-roledescription="Preço"] {
   color: $orange !important;
 }
 
-
 // PAGINA DE PRODuTOS
 form.ui-pdp-actions {
-  
 }
 button[class*="ui-pdp-action--primary"] {
-  background-color: $orange!important;
-  border: 0!important;
+  background-color: $orange !important;
+  border: 0 !important;
   span.andes-button__content {
-    color: #FFF!important;
+    color: #fff !important;
   }
 }
 button[class*="andes-button--quiet"] {
   background-color: $gray !important;
-  border: 0!important;
-  color:  $orange!important;
+  border: 0 !important;
+  color: $orange !important;
   span.andes-button__content {
-    color: #FFF!important;
+    color: #fff !important;
   }
 }
 .andes-button--loud {
-  background-color: $orange!important;
-  border: 0!important;
+  background-color: $orange !important;
+  border: 0 !important;
   span.andes-button__content {
-    color: #FFF!important;
+    color: #fff !important;
   }
 }
 .ui-compats__actions:has(button[type="submit"]) {
   button[type="submit"] {
     opacity: 1;
-    color: #FFF!important;
+    color: #fff !important;
     span {
       opacity: 1;
-      color: #FFF!important;
+      color: #fff !important;
     }
   }
 }
 
 .andes-breadcrumb__item {
   .andes-breadcrumb__link {
-    color: $brown!important;
-    span {
-      color: $brown!important;
+    color: $brown !important;
+    span,
+    a {
+      color: $brown !important;
     }
   }
 }
+.ui-pdp-buybox__quantity__available {
+  display: none !important;
+}
 
+.andes-tooltip__trigger {
+  button[id="link__label"] {
+    border-radius: 0;
 
+    span[class="andes-button__content"] {
+      color: #fff !important;
+      background: $brown !important;
+      padding: 10px !important;
+      color: #fff !important;
+    }
+  }
+}
+.ui-pdp-share .andes-tooltip__trigger .andes-button .andes-button__content {
+  color: #fff !important;
+}
+.action-modal-link {
+  color: $brown !important;
+}
+.ui-pdp-container__row--shipping-summary .ui-pdp-media__title.ui-pdp-color--GREEN {
+  background-color:$orange!important;
+}
 // PAGINA DE CONTATO
 .contact-form {
   .contact-form__title {
     text-align: center;
     color: #000;
   }
-  
+
   .contact-form__input--email {
     width: 100%;
     label {
       span {
-        font-size:17px;
+        font-size: 17px;
         color: #000;
         margin: 0 0 10px 0;
-      } 
+      }
     }
   }
 
   button[type="submit"] {
-    background-color: $orange!important;
+    background-color: $orange !important;
     span.andes-button__content {
-      color: #FFF!important;
-    } 
+      color: #fff !important;
+    }
   }
 }
+.ui-pdp-share__link__label {
+  color: #fff;
+}
+
+// PAGIAN DE CONTATO
 
 .contact-info__col-data {
   .contact-info__title {
@@ -2588,7 +2619,7 @@ button[class*="andes-button--quiet"] {
     color: #000;
   }
   label {
-    font-size:17px;
+    font-size: 17px;
     color: #000;
     margin: 0 0 10px 0;
   }
